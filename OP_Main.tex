@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+% don't forget to  'makeindex template_Article'
+\setcounter{secnumdepth}{3} % default value for 'report' class is "2" - this is for "deeper" linking
+\usepackage{graphicx}
+\usepackage{upquote} % for quote
+\usepackage{textcomp}
+\usepackage{multirow,tabularx,tabulary}
+%opening
+\title{Operations \& Management \\ ZHAW FS2015}
+\author{Pascal Langenstein}
+% deutsche Silbentrennung
+\usepackage[ngerman]{babel}
+
+% wegen deutschen Umlauten
+%\usepackage[ansinew]{inputenc} %windows
+\usepackage[applemac]{inputenc} %mac
+%\usepackage[latin1]{inputenc} %linux
+% fuer silbentrennung mit umaluten
+\usepackage[T1]{fontenc}
+
+% fuer Stichwortverzeichnis
+%\usepackage{makeidx}
+\usepackage[makeindex]{imakeidx} % http://tex.blogoverflow.com/2012/09/dont-forget-to-run-makeindex/\usepackage[makeindex]{imakeidx} & http://texwelt.de/wissen/fragen/3107/warum-wird-kein-index-erstellt
+\makeindex
+\begin{document}
+
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+\begin{abstract}
+\include{PRE/main}
+\end{abstract}
+
+\include{formeln/main}
+
+
+
+\include{W01/main}
+\include{W02/main}
+\include{W03/main}
+\include{W04/main}
+\include{W05/main}
+\include{W06/main}
+\include{W07/main}
+\include{W08/main}
+\include{W09/main}
+\include{W10/main}
+\include{W11/main}
+\include{W12/main}
+\include{W13/main}
+\include{W14/main}
+\include{Lernkontrollfragen/main}
+% Index soll Stichwortverzeichnis heissen
+\newpage
+\renewcommand{\indexname}{Stichwortverzeichnis}
+
+% Stichwortverzeichnis soll im Inhaltsverzeichnis auftauchen
+\addcontentsline{toc}{section}{Stichwortverzeichnis}
+
+% Stichwortverzeichnis endgueltig anzeigen
+\printindex
+
+
+
+
+
+
+
+\end{document}

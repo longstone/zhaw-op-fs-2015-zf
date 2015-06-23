@@ -1,0 +1,109 @@
+\section{Formeln}
+\subsection{Little\textquotesingle{}s Law\index{Little's Law}}
+\begin{center}
+	Alles in der Blackbox, egal ob in Warteschlange oder Nacharbeit, wird als Work in Progress (WIP) gez\"ahlt\\
+	\begin{tabular}{|r|c|l|}
+		\hline T  & Troughput time & s/min/h \\ 
+		\hline WIP & Work in Progress & piece/kg/CHF \\ 
+		\hline $t_c$ & cycle time & time per piece\\ 
+		\hline $R_0$ & Output rate & $\frac{piece}{time}$\\
+		\hline
+	\end{tabular}
+	\\\vspace{5 mm}
+	$t_c=\frac{T}{WIP}$\\\vspace{2 mm}
+	$R_0$ = $\frac{1}{t_c}$ \\\vspace{2 mm}
+	T =$ WIP\cdot cycle time$ \\\vspace{2 mm}
+	T = $\frac{WIP}{output rate}$\\\vspace{2 mm}
+	
+\end{center}
+\subsection{EBQ\index{EBQ}}
+Economic batch quantity\index{Economic batch quantity}\\
+\begin{center}
+	\begin{tabular}{|r|l|}
+		\hline EOQ/EBQ  & Economical Batch Quality \\ 
+		\hline $Q$  & Batch Size \\ 
+		\hline $D$ & Demand per annum \\ 
+		\hline $C_h$ & Cost of holding one unit for one year\\ 
+		\hline $C_O$ & Cost of setting up a bach ready to be produced\\
+		\hline $R$ & Anulal replenishment rate\\
+		\hline
+	\end{tabular}
+	\\\vspace{5 mm}
+
+$\sqrt{\frac{2 \cdot C_O \cdot D}{ C_h \cdot ( 1 -\frac{D}{R}  ) }}$
+\end{center}
+\subsection{EOQ}
+\begin{center}
+	\begin{tabular}{|c|c|}
+		\hline Holding Costs  & Order Costs \\ 
+		\hline Working capital costs & Cost of placing an order \\
+		Storage costs & PRice discount costs\\
+		Obsolescence risk costs & \\
+		\hline
+	\end{tabular}
+	\\\vspace{5 mm}
+	\begin{tabular}{|r|l|}
+		\hline EOQ/EBQ  & Economical Batch Quality \\ 
+		\hline Q  & Ordering quantity \\ 
+		\hline $C_t$ & Total sourcing costs \\ 
+		\hline $C_O$ & ordering costs per order\\ 
+		\hline $D$ & Demand per Period$t_p$\\
+		\hline $S$ & Safety Stock\\
+		\hline $C_h$& Holding costs per unit ($t_p$)\\
+		\hline
+	\end{tabular}
+	\\\vspace{5 mm}
+	
+	$C_h$ = $\frac{C_h\cdot Q}{2 + C_h \cdot S}$\\\vspace{2mm}
+	$C_O$ = $\frac{C_O \cdot D}{Q}$\\\vspace{2mm}
+	$C_t$ =  $C_h + C_O$\\\vspace{2mm}
+	$EOQ = \frac{D \cdot C_t}{D \cdot Q} = 0$ \\\vspace{2 mm}
+	$EOQ = \sqrt{\frac{2 \cdot C_O \cdot D}{C_h}}$ \\\vspace{2 mm}
+	Order frequency = $\frac{D}{EOQ}$\\\vspace{2mm}
+	Time between orders = $\frac{EOQ}{D}$\\\vspace{2mm}
+	
+\end{center}
+\subsection{Prozessberechnungen}\label{balancingLoss}
+\begin{center}
+	\index{Balancing Loss}
+	\begin{tabular}{|r|l|p{7cm}|}
+		\hline Balancing Loss  & Zeitverlust & Verschwendete Zeit durch ungleich verteilte Arbeiten in \% zur gesammten Arbeitszeit \\ 
+		\hline Process Time $T_p$ & Prozesszeit (Overall) & l\"angster Prozess $\cdot$ Prozessschritte\\ 
+		\hline $T_w$ & verschwendete Zeit & Summe aller Zeitdifferenzen zum l\"angsten Prozessschritt\\
+		\hline
+	\end{tabular}
+	\\\vspace{5 mm}
+		$Idle Time$ = longste step time - $step_1..n$ time) \\\vspace{2 mm}
+	$T_w$ = $ \sum (Time_{longestStep}-Time_{Step_1...n})$ \\\vspace{2 mm}
+	$T_p = longest Step \cdot Steps$ \\\vspace{2 mm}
+	$Balancing Loss$ = $\frac{T_w}{T_p}$ \\\vspace{2 mm}
+	
+\end{center}
+\subsection{Six Sigma\index{Six Sigma}} \label{sixSigmaCalculation}
+\begin{center}
+	
+	\begin{tabular}{|r|c|p{8cm}|}
+		\hline $C_p$  & Process Capability & Process capability is a technique to find out the measurable property of a process to a specification. Generally, the final solution of the process capability is specified either in the form of calculations or histograms \\ 
+		\hline $C_pk$ & Process Capability Index  & Process capability index (cpk) is the measure of process capability. It shows how closely a process is able to produce the output to its overall specifications. \\ 
+		\hline $USL$ & Upper Specification Limit & \\ 
+		\hline $LSL$ & Lower Specification Limit & \\			\hline $UCL$ & Upper Control Limit & \\ 
+		\hline $LCL$ & Lower Control Limit & \\
+		\hline
+	\end{tabular}
+	\\\vspace{5 mm}
+	
+	$C_p = \frac{USL - LSL}{6 \cdot std.Dev}$ \\\vspace{2 mm}
+	$C_pk = min(\frac{USL  - mean }{3 \cdot std.Dev},\frac{mean  - LSL }{3 \cdot std.Dev})$ \\\vspace{2 mm}
+	$USL$>$UCL$ \& $LSL$ < $LCL$ = production in bounds\\\vspace{2 mm}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline Sigma level &	DPMO &	fehlerhaft \% &	fehlerfrei \% &	Kurzfristiger Cpk &	Langfristiger Cpk \\
+	\hline 1 & 691.462 & 69 \% & 31 \% & 0,33 & –0,17\\
+	\hline 2 & 308.538 & 31 \% & 69 \% & 0,67 & 0,17\\
+	\hline 3 & 66.807 & 6,7 \% & 93,3 \% & 1,00 & 0,5\\
+	\hline \textbf{4} & \textbf{6.210} &\textbf{ 0,62 \% }& \textbf{99,38 \%} & \textbf{1,33} & \textbf{0,83}\\
+	\hline 5 & 233 & 0,023 \% & 99,977 \% & 1,67 & 1,17\\
+	\hline 6 & 3,4 & 0,00034 \% & 99,99966 \% & 2,00 & 1,5\\
+	\hline 7 & 0,019 & 0,0000019 \% & 99,9999981 \% & 2,33 & 1,83\\
+		\hline
+	\end{tabular}
+\end{center}
